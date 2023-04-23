@@ -54,11 +54,14 @@ Test Implementation:
 
 1.Access https://nbl.one/feed, validate if there is at least 1 quest.
 python
+    
 
 def test_quest_present():
     driver.get("https://nbl.one/feed")
     quests = driver.find_elements_by_css_selector("div.feed-card")
     assert len(quests) >= 1
+    
+    
 2.Access https://nby.la/rdJuXp and try booking the skylift
 python
 
@@ -70,8 +73,11 @@ def test_booking_skylift():
     book_now_button = driver.find_element_by_css_selector("button[data-gtm-event='Click - Book Now']")
     book_now_button.click()
     assert "Confirm Your Booking" in driver.title
+    
+    
 3.Access https://nbl.one/listings, then scrape all the cards for title, price and link associated with each card.
 python
+    
 
 def test_scrape_listings():
     driver.get("https://nbl.one/listings")
